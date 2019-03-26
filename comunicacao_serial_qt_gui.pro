@@ -6,6 +6,10 @@
 
 QT       += core gui
 
+QT += serialport
+
+QT += core gui webengine webenginewidgets
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = comunicacao_serial_qt_gui
@@ -26,10 +30,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        widget.cpp
+        widget.cpp \
+    comserial.cpp
 
 HEADERS += \
-        widget.h
+        widget.h \
+    comserial.h
 
 FORMS += \
         widget.ui
@@ -38,3 +44,5 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
