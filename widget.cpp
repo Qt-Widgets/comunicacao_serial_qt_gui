@@ -10,7 +10,8 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
-
+        
+       /* Create WebView set url */
        QWebEngineView* webview = new QWebEngineView;
        QUrl url = QUrl("https://repp.azurewebsites.net/maps/?lat=-34.397&long=150.644");
        webview->page()->load(url);
